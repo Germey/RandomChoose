@@ -5,19 +5,20 @@ names = ['A', 'B', 'C', 'D', 'E']
 weights = [100, 200, 30, 260, 2]
 sum = sum(weights)
 weights = list(map(lambda x: x / sum, weights))
+number = 2
 
-print(weights)
-
-m = 2
+print('Names:', names)
+print('Weights:', weights)
+print('Choose %d from list' % number)
 
 result = []
 
 
-def choose():
+def choose(names, weights, number):
     for i in range(len(names)):
         k = math.pow(random.random(), 1 / weights[i])
         print(k)
-        if len(result) < m:
+        if len(result) < number:
             result.append((names[i], k))
         else:
             print(result)
@@ -30,6 +31,6 @@ def choose():
 
 
 if __name__ == '__main__':
-    result = choose()
+    result = choose(names, weights, number)
     print(result)
     # print(random.random())
